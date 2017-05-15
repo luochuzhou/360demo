@@ -1,0 +1,405 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*动画测试*/
+/*
+h3{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+    transition: all 1s;
+
+    transform: translateX(-1000px);
+}
+
+.current h3{
+    transform: translateX(500px);
+}
+*/
+
+.section{
+    position: relative;
+}
+
+/*第一屏*/
+.first{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    background: url("../images/logo.png");
+    width: 251px;
+    height: 186px;
+    margin: 60px auto;
+}
+
+.text{
+    width: 100%;
+    text-align: center;
+}
+
+.text img{
+    margin: 10px 30px;
+    opacity: 0;
+}
+
+.info{
+    width: 772px;
+    height: 49px;
+    margin: 40px auto;
+    background: url("../images/info_1.png") no-repeat;
+}
+
+/*第一屏动画*/
+.first.current .text img{
+    transition: all 1s;
+
+    margin: 10px 10px;
+    opacity: 1;
+}
+
+/*第二屏*/
+.second {
+    padding: 0 100px;
+}
+
+.second>div{
+    display: flex;
+    align-items: center;  /*竖直方向居中*/
+    justify-content: space-between;
+}
+
+.second .shield{
+    width: 428px;
+    height: 498px;
+}
+
+.second img:nth-child(1) {
+    transform: translate(35px, 78px) rotate(45deg);
+}
+
+.second img:nth-child(2) {
+    transform: translate(135px, 282px) rotate(15deg);
+}
+
+.second img:nth-child(3) {
+    transform: translate(187px, 62px) rotate(15deg);
+}
+
+.second img:nth-child(4) {
+    transform: translate(10px, 162px) rotate(30deg);
+}
+
+.second img:nth-child(5) {
+    transform: translate(465px, 522px) rotate(30deg);
+}
+
+.second img:nth-child(6) {
+    transform: translate(480px, 62px) rotate(90deg);
+}
+
+.second img:nth-child(7) {
+    transform: translate(180px, -305px) rotate(80deg);
+}
+
+.second img:nth-child(8) {
+    transform: translate(300px, -22px) rotate(70deg);
+}
+
+.second img:nth-child(9) {
+    transform: translate(280px, -322px) rotate(60deg);
+}
+
+.second .safe{
+    width: 635px;
+    height: 309px;
+    background: url(../images/info_2.png);
+}
+
+/*第二屏动画*/
+.second.current img{
+    transition: all 1s;
+    transform: translate(0px,0px) rotate(0deg);
+}
+
+.third{
+    padding: 0 70px;
+}
+
+.third>div{
+    display: flex;
+    align-items: center;  /*竖直方向居中*/
+    justify-content: space-between;
+}
+
+.third .info{
+    width: 631px;
+    height: 278px;
+    background: url("../images/info_3.png") no-repeat;
+}
+
+.third .rocket{
+    width: 203px;
+    height: 204px;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%,100%);
+    background: url("../images/rocket.png") no-repeat;
+}
+
+.third .circle{
+    width: 453px;
+    height: 449px;
+    background: url("../images/circle.png") no-repeat;
+}
+
+/*第三屏动画*/
+.third.current .rocket{
+    transition: all 1s;
+    transform: translate(120%,-120%);
+}
+
+.third.current .circle{
+    transition: all 1s;
+    animation: rot 3s infinite linear;
+}
+
+/*第四屏*/
+.forth{
+    padding: 0 80px;
+}
+
+.forth>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forth .search{
+    width: 529px;
+    height: 393px;
+    position: relative;
+}
+
+.forth .search .input{
+    width: 529px;
+    height: 66px;
+    background: url("../images/search.png") no-repeat;
+
+
+    transform: translateX(-529px);
+    opacity: 0;
+}
+
+.forth .search .word{
+    width: 0px;
+    height: 22px;
+    position: absolute;
+    background: url("../images/key.png") no-repeat;
+
+
+    left: 15px;
+    top: 23px;
+}
+
+.forth .search .result{
+    width: 529px;
+    height: 0px;  /*372*/
+    position: absolute;
+    background: url("../images/result.png") no-repeat;
+
+
+    left: 0;
+    top: 53px;
+}
+
+.forth .info{
+    width: 612px;
+    height: 393px;
+    background: url("../images/info_4.png") no-repeat left top;
+}
+
+/*第四屏动画*/
+.forth.current .input{
+    transition: all 1s;
+
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.forth.current .word{
+    transition: all 2s steps(5) 1s;
+
+    width: 99px;
+}
+
+.forth.current .result{
+    transition: all 2s 3s;
+
+    height: 327px;
+}
+
+/*第五屏*/
+.firth{
+    padding: 0 85px;
+}
+
+.firth>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.firth .info{
+    width: 1077px;
+    height: 134px;
+    background: url("../images/info_5.png") no-repeat;
+}
+
+.firth .interface{
+    width: 1004px;
+    margin: 0 auto;
+    flex: 1;
+    background-color: rgba(255,255,255,0.15);
+    position: relative;
+}
+
+.firth .interface .box{
+    position: absolute;
+    width: 0px;  /*920*/
+    height: 27px;
+    border: 2px solid rgba(255,255,255,0.15);
+    left:80px;
+    top:30px;
+}
+
+.firth .interface .leftline{
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: rgba(255,255,255,0.15);
+    top:-100%;
+    opacity: 0;
+}
+
+.firth .interface .rightline{
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: rgba(255,255,255,0.15);
+    bottom:-100%;
+    right: 0px;
+    opacity: 0;
+
+}
+
+.firth .interface .topline{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255,255,255,0.15);
+    left: 100%;
+    opacity: 0;
+}
+
+.firth .interface .bottomline{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255,255,255,0.15);
+    right: 100%;
+    bottom: 0;
+    opacity: 0;
+}
+
+.firth .interface .back{
+    width: 1004px;
+    height: 79px;
+    position: absolute;
+    background: url("../images/toolbar.png") no-repeat;
+
+    opacity: 0;
+}
+
+.firth .interface .extra{
+    width: 1004px;
+    height: 29px;
+    position: absolute;
+    background: url("../images/extra.png") no-repeat right center;
+    border-top:2px solid rgba(255,255,255,0.15);
+    bottom: 0px;
+    right: 0px;
+
+    opacity: 0;
+}
+
+.firth .interface .bottomline{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,0.15);
+    position: absolute;
+    bottom: 0;
+}
+
+/*第五屏动画*/
+.firth.current .interface .topline{
+    transition: all 1s;
+
+    opacity: 1;
+    left:0;
+
+}
+.firth.current .interface .leftline{
+    transition: all 1s;
+
+    top:0;
+    opacity: 1;
+}
+.firth.current .interface .rightline{
+    transition: all 1s;
+
+    bottom:0;
+    opacity: 1;
+}
+.firth.current .interface .bottomline{
+    transition: all 1s;
+
+    right: 0;
+    opacity:1;
+}
+
+.firth.current .interface .box{
+    transition: all 2s 1s;
+
+    width: 920px;  /*920*/
+}
+
+.firth.current .interface .back{
+    transition: all 2s 2s;
+
+    opacity: 1;
+}
+
+.firth.current .interface .extra{
+    transition: all 2s 2s;
+
+    opacity: 1;
+}
+
+
+@keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
